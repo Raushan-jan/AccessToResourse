@@ -10,7 +10,7 @@ public class Main {
     public static User getUserByLoginAndPassword(String login, String password) throws UserNotFoundExeption {
         User[] users = getUsers();
         for (User user : users) {
-            if (user.getPassword().equals(password) && user.getLogin().equals(login)) {
+            if (user.getPassword().equalsIgnoreCase(password) && user.getLogin().equalsIgnoreCase(login)) {
                 return user;
             }
         }
